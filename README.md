@@ -60,7 +60,7 @@ export default Generator(Counter);
 ```
 
 It stores a `count` value in the state which is initially set to `0` or a custom value
-provided by an `initalCount` property.  It has `increment()` and `decrement()` methods
+provided by an `initialCount` property.  It has `increment()` and `decrement()` methods
 which respectively add or subtract one from the count.
 
 In the `constructor()` method we also define `this.actions` to store versions of these
@@ -68,7 +68,7 @@ methods that are bound to `this`, allowing them to be called as functions from a
 in our code.  I've given then shorter names here - `inc` and `dec` but that's entirely
 arbitrary.  The original names would serve the purpose just as well.
 
-So far this is all fairly standard Javascript code.  Where it gets interesting is in
+So far this is all fairly standard Javascript/React code.  Where it gets interesting is in
 the `render()` method.  All we do here is call the `render()` function that is passed
 in as a property - `this.props.render()` - and pass it an object containing the things
 that we want to share with other components.
