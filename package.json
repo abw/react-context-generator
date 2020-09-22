@@ -2,9 +2,10 @@
   "name": "@abw/react-context-generator",
   "version": "1.0.0",
   "description": "Higher order component to easily create and use a React context",
-  "main": "src/index.js",
+  "main": "lib/Generator.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -22,15 +23,22 @@
     "url": "https://github.com/abw/react-context-generator/issues"
   },
   "homepage": "https://github.com/abw/react-context-generator#readme",
-  "dependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+  "peerDependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.11.5",
-    "@babel/preset-react": "^7.10.4",
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
+    "@babel/preset-react": "^7.0.0",
     "babel-jest": "^26.3.0",
+    "babel-loader": "^8.0.4",
     "jest": "^26.4.2",
-    "react-test-renderer": "^16.13.1"
+    "path": "^0.12.7",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-test-renderer": "^16.13.1",
+    "webpack": "^4.5.0",
+    "webpack-cli": "^3.2.1"
   }
 }
