@@ -21,7 +21,7 @@ Add `react-context-generator` to your project using either [npm](https://www.npm
 ### Or:
     $ yarn add @abw/react-context-generator
 
-## Wrapping a Model Component to Make it a Context Provider
+## Wrapping a Component that Maintains State
 
 Here's a simple example of a component that maintains some state
 and provides methods for manipulating that state.
@@ -77,8 +77,13 @@ contains `count`) and the actions that we've defined to manipulate the state (`i
 
 The final line of code calls the `Generator()` function imported from
 `@abw/react-context-generator` passing the `Counter` component as an argument.
+This is then the default value exported by the `Counter.js` module.
 
-## Using the Model Component to Provide Context
+```js
+export default Generator(Counter);
+```
+
+## Using the Context Provider
 
 Now when we import this module we get an object that contains two entries: a `Provider` and a `Consumer`.
 
@@ -108,8 +113,9 @@ export default props => <div id="myapp">
     ...the rest of your app goes here...
   </Counter.Provider>
 </div>
-
 ```
+
+## Using the Context Consumer
 
 When you need to access the state provided by `Counter` from somewhere deep inside your app you
 simply need to wrap it in the `Counter.Consumer` function.  All of the items that the `Counter`
