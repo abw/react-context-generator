@@ -1,7 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { act } from 'react-dom/test-utils';
+import ReactDOM from "react-dom/client";
 import CountApp from './lib/CountApp'
+import { act } from '@testing-library/react';
 
 // Variation of counter.js that passed an initialCount property
 let container;
@@ -19,7 +19,7 @@ afterEach(() => {
 it('can render and update a counter', () => {
   // Test first render with initial state
   act(() => {
-    ReactDOM.render(<CountApp initialCount={100}/>, container);
+    ReactDOM.createRoot(container).render(<CountApp initialCount={100}/>);
   });
   const inc   = container.querySelector('#inc');
   const dec   = container.querySelector('#dec');
