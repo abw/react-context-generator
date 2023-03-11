@@ -1,9 +1,11 @@
-module.exports = {
+export default {
   testEnvironment: "jsdom",
   testMatch: [
-     "**/test/**/*.js?(x)",
+    "**/test/**/*.js?(x)",
   ],
   testPathIgnorePatterns: [
-     "/test/lib/"
+    "/test/lib/"
   ],
 };
+
+
