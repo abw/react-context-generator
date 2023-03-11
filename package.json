@@ -1,10 +1,16 @@
 {
   "name": "@abw/react-context-generator",
-  "version": "1.1.2-beta.0",
+  "version": "1.1.2-beta.1",
   "description": "Higher order component to easily create and use a React context",
   "type": "module",
-  "main": "dist/Generator.js",
-  "module": "dist/Generator.esm.js",
+  "main": "dist/react-context-generator.cjs",
+  "module": "dist/react-context-generator.mjs",
+  "exports": {
+    ".": {
+      "require": "./dist/react-context-generator.cjs",
+      "import": "./dist/react-context-generator.mjs"
+    }
+  },
   "scripts": {
     "test": "jest",
     "build": "rollup -c"
