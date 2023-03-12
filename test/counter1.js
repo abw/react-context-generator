@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from "react-dom/client";
-import CountApp from './lib/CountApp'
+import App from './lib/Counter1/App.js'
 import { act } from '@testing-library/react';
 
 // Written using information gleaned from https://reactjs.org/docs/test-utils.html
@@ -20,7 +20,7 @@ afterEach(() => {
 it('can render and update a counter', () => {
   // Test first render with initial state
   act(() => {
-    ReactDOM.createRoot(container).render(<CountApp/>);
+    ReactDOM.createRoot(container).render(<App/>);
   });
   const inc   = container.querySelector('#inc');
   const dec   = container.querySelector('#dec');

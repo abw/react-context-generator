@@ -1,5 +1,5 @@
 import React from "react";
-import Generator from "../../src/Generator";
+import Generator from "../../../src/index.js";
 
 // This is our basic "model" component which stores the state (count)
 // and has methods to manipulate it (increment() and decrement())
@@ -7,7 +7,7 @@ class Counter extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      count:   this.props.initialCount || 0
+      count: this.props.initialCount || 0
     };
     // decide which methods we want to expose to consumers and
     // bind them to 'this' so they can be called as functions
