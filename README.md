@@ -13,7 +13,7 @@ reading the React Context documentation: https://reactjs.org/docs/context.html
 
 ## Version 2 - Breaking Changes
 
-For version 1 you can import the `Generator` function as the default
+For version 1 you can import the `Generator` function as the default.
 
 ```js
 // version 1.*.*
@@ -116,24 +116,24 @@ It's typically added somewhere near the "outside" of your application.
 import React from "react";
 import Counter from "./Counter";
 
-export default props => <div id="myapp">
-  <h1>Welcome to My Counting App!</h1>
-  <Counter.Provider>
-    ...the rest of your app goes here...
-  </Counter.Provider>
-</div>
+const MyApp = props =>
+  <div id="myapp">
+    <h1>Welcome to My Counting App!</h1>
+    <Counter.Provider>
+      ...the rest of your app goes here...
+    </Counter.Provider>
+  </div>
+
+export default MyApp
 ```
 
 You can pass custom properties to your `Provider` if you want to.  They will get passed down to
 the `Counter` component, e.g.
 
 ```js
-export default props => <div id="myapp">
-  <h1>Welcome to My Counting App that Starts at 100!</h1>
   <Counter.Provider initialCount={100}>
     ...the rest of your app goes here...
   </Counter.Provider>
-</div>
 ```
 
 ## Using the Context Consumer
