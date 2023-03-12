@@ -6,6 +6,9 @@ class Counter extends Context {
   static initialState = {
     count: 10,
   }
+  static initialProps = {
+    count: 'initialCount',
+  }
   static actions     = "inc dec";
   static debug       = false;
   static debugPrefix = 'Counter > ';

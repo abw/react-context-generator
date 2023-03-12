@@ -2,6 +2,7 @@ import React from 'react'
 
 export class Context extends React.Component {
   static initialState  = { }
+  static initialProps  = { }
   static actions = [ ];
 
   constructor(props) {
@@ -9,7 +10,11 @@ export class Context extends React.Component {
     const statics = this.constructor;
 
     // define initial state
-    this.state = { ...statics.initialState };
+    this.state = this.prepareState(
+      statics.initialState,
+      statics.initialProps,
+      props
+    );
 
     // add debug() method if static debug flag or debug prop is set
     this.debug = (statics.debug || props.debug)
@@ -24,6 +29,19 @@ export class Context extends React.Component {
 
     // expose any methods as callable functions in this.handlers
     this.actionMethods(statics.actions)
+  }
+
+  prepareState(initialState, initialProps, props) {
+    return Object.entries(initialProps).reduce(
+      (state, [key, propName]) => {
+        const value = props[propName];
+        if (value !== null && typeof value !== 'undefined') {
+          state[key] = value;
+        }
+        return state;
+      },
+      { ...initialState }
+    )
   }
 
   actionMethods(names=[]) {
