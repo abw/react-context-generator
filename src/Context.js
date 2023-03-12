@@ -9,13 +9,6 @@ export class Context extends React.Component {
     super(props);
     const statics = this.constructor;
 
-    // define initial state
-    this.state = this.prepareState(
-      statics.initialState,
-      statics.initialProps,
-      props
-    );
-
     // add debug() method if static debug flag or debug prop is set
     this.debug = (statics.debug || props.debug)
       ? statics.debugPrefix
@@ -27,15 +20,24 @@ export class Context extends React.Component {
         : console.log.bind(console)
       : () => (undefined);
 
+    // define initial state
+    this.state = this.prepareState(
+      statics.initialState,
+      statics.initialProps,
+      props
+    );
+
     // expose any methods as callable functions in this.handlers
     this.actionMethods(statics.actions)
   }
 
   prepareState(initialState, initialProps, props) {
+    this.debug('initialState:', initialState)
     return Object.entries(initialProps).reduce(
       (state, [key, propName]) => {
         const value = props[propName];
         if (value !== null && typeof value !== 'undefined') {
+          this.debug(`setting ${key} from initialProps ${propName}:`, value)
           state[key] = value;
         }
         return state;
@@ -53,7 +55,7 @@ export class Context extends React.Component {
       name => {
         let method = this[name];
         if (method) {
-          this.debug(`exposing method ${name}()`)
+          this.debug(`exposing method ${name}() as an action`)
           actions[name] = method.bind(this);
         }
         else {
