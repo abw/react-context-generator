@@ -254,3 +254,18 @@ const Controls = ({Counter}) => <div>
 </div>
 ```
 
+## Example Project
+
+There's an example Next JS project in the
+[example](https://github.com/abw/react-context-generator/tree/master/example)
+directory which demonstrates it in use.
+
+To play around with it you'll need to checkout the repository and then
+install the dependencies.
+
+```bash
+git clone https://github.com/abw/react-context-generator.git
+cd react-context-generator/example
+pnpm install    # or npm / yarn
+pnpm dev        # or npm / yarn
+```
