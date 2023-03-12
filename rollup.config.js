@@ -3,12 +3,10 @@ import commonjs from "@rollup/plugin-commonjs"
 import resolve from "@rollup/plugin-node-resolve"
 import peerDepsExternal from "rollup-plugin-peer-deps-external"
 import pkg from './package.json' assert { type: 'json' }
-// const pkg = require("./package.json");
-
 
 export default [
   {
-    input: "src/Generator.jsx",
+    input: "src/index.jsx",
     output: [
       {
         file: pkg.main,
