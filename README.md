@@ -112,11 +112,11 @@ The `Provider` is designed to enclose any and all components that might need to 
 It's typically added somewhere near the "outside" of your application.
 
 ```js
-// MyApp.js
+// MyApp.jsx
 import React from "react";
-import Counter from "./Counter";
+import Counter from "./Counter.js";
 
-const MyApp = props =>
+const MyApp = () =>
   <div id="myapp">
     <h1>Welcome to My Counting App!</h1>
     <Counter.Provider>
@@ -145,7 +145,7 @@ module shares as context will be passed into your component as properties.
 ```js
 // Controls.js
 import React from "react";
-import Counter from "./Counter";
+import Counter from "./Counter.js";
 
 const Controls = ({count, inc, dec}) => <div>
   <p>The current count is {count}</p>
@@ -171,6 +171,9 @@ class Counter extends Context {
   static initialState = {
     count: 10,
   }
+  static initialProps = {
+    count: 'initialCount',
+  }
   static actions     = "inc dec";
   static debug       = false;
   static debugPrefix = 'Counter > ';
@@ -189,8 +192,11 @@ class Counter extends Context {
 export default Generator(Counter);
 ```
 
-The `initialState` static property allows you to define the initial state of
-the context.
+The `initialState` static property defines the initial state of the context.
+The `initialProps` property indicates which properties can be passed to the
+context to set the initial state.  In this example the `count` will be set to
+`10` by default and an `initialCount` property can be passed to it to set it
+to a different value.
 
 The `actions` list says which methods should be exposed in the context
 data as callable action functions.  It can be specified as an array of method
