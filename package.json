@@ -1,6 +1,6 @@
 {
   "name": "@abw/react-context-generator",
-  "version": "2.0.0-beta.0",
+  "version": "2.0.0-beta.1",
   "description": "Higher order component to easily create and use a React context",
   "type": "module",
   "main": "dist/react-context-generator.cjs",
