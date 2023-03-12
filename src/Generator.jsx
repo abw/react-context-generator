@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default (Model, defaultState={}) => {
+export const Generator = (Model, defaultState={}) => {
   const Context = React.createContext(defaultState);
 
   // Provider renders the Model component forwarding all props passed to it
@@ -20,3 +20,5 @@ export default (Model, defaultState={}) => {
 
   return { Context, Provider, Consumer }
 }
+
+export default Generator

@@ -1,5 +1,5 @@
 import React from "react";
-import Generator from "../../../src/index.js";
+import { Generator } from "../../../src/index.js";
 
 // This is our basic "model" component which stores the state (count)
 // and has methods to manipulate it (increment() and decrement())

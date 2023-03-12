@@ -11,6 +11,22 @@ of code or so for the main function.
 If you're not already familiar with React Context then you should start by
 reading the React Context documentation: https://reactjs.org/docs/context.html
 
+## Version 2 - Breaking Changes
+
+For version 1 you can import the `Generator` function as the default
+
+```js
+// version 1.*.*
+import Generator from '@abw/react-context-generator`
+```
+
+For version 2 and above you must use named imports.
+
+```js
+// version 2.*.*
+import { Generator } from '@abw/react-context-generator`
+```
+
 ## Installation
 
 Add `react-context-generator` to your project using your favourite package
@@ -33,7 +49,7 @@ and provides methods for manipulating that state.
 ```js
 // Counter.js
 import React from "react";
-import Generator from "@abw/react-context-generator";
+import { Generator } from "@abw/react-context-generator";
 
 class Counter extends React.Component {
   constructor(props) {
