@@ -4,7 +4,7 @@
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
-
+  --font-arial: Arial, "Helvetica Neue", Helvetica, sans-serif;
   --foreground-rgb: 0, 0, 0;
   --background-rgb: 240, 244, 248;
 }
@@ -18,14 +18,15 @@
 
 * {
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
 }
 
 html,
 body {
+  padding: 0;
+  margin: 0;
   max-width: 100vw;
   overflow-x: hidden;
+  font-family: var(--font-arial);
 }
 
 body {
@@ -33,9 +34,27 @@ body {
   background: rgb(var(--background-rgb))
 }
 
+main {
+  max-width: 120ch;
+  margin: 2rem auto;
+}
+
 a {
-  color: inherit;
   text-decoration: none;
+  color: blueviolet;
+}
+a:hover {
+  cursor: pointer;
+  color: orangered;
+}
+nav a {
+  background-color: #ccc;
+  padding: 3px 8px;
+  margin-right: 8px;
+}
+
+div.price {
+  font-size: 3rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -43,3 +62,4 @@ a {
     color-scheme: dark;
   }
 }
+

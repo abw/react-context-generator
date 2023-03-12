@@ -1,6 +1,8 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@abw/badger-utils': ^1.0.17
+  '@abw/react-context-generator': 2.0.0-beta.0
   eslint: 8.36.0
   eslint-config-next: 13.2.4
   next: 13.2.4
@@ -8,6 +10,8 @@ specifiers:
   react-dom: 18.2.0
 
 dependencies:
+  '@abw/badger-utils': 1.0.17
+  '@abw/react-context-generator': 2.0.0-beta.0_biqbaboplfbrettd7655fr4n2y
   eslint: 8.36.0
   eslint-config-next: 13.2.4_vgl77cfdswitgr47lm5swmv43m
   next: 13.2.4_biqbaboplfbrettd7655fr4n2y
@@ -15,6 +19,20 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
 
 packages:
+
+  /@abw/badger-utils/1.0.17:
+    resolution: {integrity: sha512-B776xg/9r7uQ04zcquwS9di4E8b/1bECjbz//78wDWw52+ik7f+yEOkfOxQI8Dcc7W2j/Jn4f2Py/d/kwg4ntQ==}
+    dev: false
+
+  /@abw/react-context-generator/2.0.0-beta.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-zBv0HM00XY1cejwUbXN/CSMl2ll4ZxW2XYuIN9/j/KYnyY1a+b70uqE7oQ11SON2E07mG9d3z085jCX+v9jYJw==}
+    peerDependencies:
+      react: '>=17.0.0'
+      react-dom: '>=17.0.0'
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
 
   /@babel/runtime/7.21.0:
     resolution: {integrity: sha512-xwII0//EObnq89Ji5AKYQaRYiW/nZ3llSv29d49IuxPhKbtJoLP+9QUUZ4nVragQVtaVGeZrpB+ZtG/Pdy/POw==}

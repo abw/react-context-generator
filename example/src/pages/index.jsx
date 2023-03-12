@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 
 const Home = () =>
   <>
@@ -8,9 +9,10 @@ const Home = () =>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
     </Head>
     <main>
-    <p>
-      See the range of <Link href="/products">products page</Link>.
-    </p>
+      <h1>React Context Generator Example</h1>
+      <p>
+        See the <Link href="/products">products page</Link>.
+      </p>
     </main>
   </>
 

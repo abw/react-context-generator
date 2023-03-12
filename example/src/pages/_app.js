@@ -1,5 +1,7 @@
 import '@/src/styles/globals.css'
+import Site from '../lib/Site.jsx'
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+const App = ({ Component, pageProps }) =>
+  <Site Component={Component} pageProps={pageProps}/>
+
+export default App
