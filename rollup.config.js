@@ -2,6 +2,7 @@ import babel from '@rollup/plugin-babel'
 import commonjs from "@rollup/plugin-commonjs"
 import resolve from "@rollup/plugin-node-resolve"
 import peerDepsExternal from "rollup-plugin-peer-deps-external"
+import terser from '@rollup/plugin-terser';
 import pkg from './package.json' assert { type: 'json' }
 
 export default [
@@ -12,11 +13,15 @@ export default [
         file: pkg.main,
         format: "cjs",
         sourcemap: true,
+        exports: 'named',
+        plugins: [terser()]
       },
       {
         file: pkg.module,
         format: "esm",
+        exports: 'named',
         sourcemap: true,
+        plugins: [terser()]
       },
     ],
     plugins: [
