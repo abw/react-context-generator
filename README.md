@@ -1,6 +1,19 @@
 # react-context-generator
 
+## DEPRECATION NOTICE
+
+This module has been superceded by [@abw/react-context](https://www.npmjs.com/package/@abw/react-context).  It does the same thing and a little bit more.  The name
+change reflects the fact that it's no longer just a context generator.
+
+It works the same way and should be a drop-in replacement (although see the
+note below about [breaking changes](#version-2---breaking-changes) between
+versions 1 and 2).
+
+This module will continue to be available but no further development will be
+done on it.
+
 ## Introduction
+
 This is a small and simple module that provides some syntactic sugar to
 streamline the use of React Context to maintain state in your React
 applications.
